@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<link rel="stylesheet" href="./css/main.css" />
+		<link media="(min-width:500px)" rel="stylesheet" href="./css/desk.css" />
+		<link media="(min-width:500px)" rel="stylesheet" href="./css/mobile.css" />
+		<title></title>
+	</head>
+	<body>
+		 <div class="box" id="box" >1</div><br />
+		 <button id="btn">获取width,改变长度,颜色</button><span id='sp'></span>
+		 <div class="expl"> 
+		 	<h4>关于style,currentStyle和getComputedStyle的区别</h4>
+		 	<p style="font-size:14px,text-indent:25px" >在js中,通过document.getElementById.style.attr,
+		 		我们可以获取attr的属性,但是这里获取的是通过内嵌样式设置的样式值,
+		 		即style属性里面设置的值,举个例子:
+		 	</p>
+		 	<p>
+		 	    &lt;div style=&quot;width:100rem,height:100rem&quot;&gt;<br/>
+		 	    我是一个div手机盒子,长100rem,宽100rem<br/>
+		 	    &lt;/div&gt;
+		 	</p>
+		 	 <p>这里style属性在tag中,我们可以通过.style获取其长度,其高度,但是如果style样式通过<strong>内部样式</strong>或者<strong>外部样式表</strong>来设置
+		 	 的话,那么js中,我们无法通过.style来获取其相关属性,不过我们可以通过currentStyle和getComputedStyle来获取其相关style属性
+		 	 </p>   
+		 	 <p>
+		 	 	通过<strong>currentStyle</strong>,我们可以获得内联或外部引用的CSS样式的值了<strong>（仅限IE） </strong>
+		 	 	如：document.getElementById("test").currentStyle.top<br />
+		 	 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是currentStyle仅仅限于IE浏览器,对于火狐及chrome浏览器则存在兼容问题,我们需要通过getComputedStyle来获取后两者浏览器中对象的
+		 	 	style属性,如本网页的例子,详见代码
+		 	 </p>
+		 </div>
+		 <script src="./js/currentStyleAndgetComputedStyle.js"></script>
+	</body>
+
+</html>
